@@ -1,0 +1,103 @@
+
+
+struct Queue
+  beginning
+  end
+  size
+  totalsize
+  buffer
+
+struct *queueinit(totalsize)
+  queue *queue
+  init struct
+
+int main(argc, **argv)
+  check the num of arguments provided
+  if less than needed, then try again
+
+  parse the arguments
+  init argument values
+  get num of items consumers need to consumer
+    handle odd numbers
+
+  queueinit(num of buffers)
+
+  create and init semaphores
+    use semaphores for both full and empty
+
+  create mutex
+  create array of producer threads
+  create array of consumer threads
+
+  start the timer
+
+  create all producer threads
+  create all consumer threads
+  join all producer threads
+  join all consumer threads
+
+  end timer
+
+  print timer, and producer/consumer buffers
+
+producer(thread id)
+  while there are still items left to produce
+    tell empty semaphore to wait
+    tell mutex to lock
+
+    enquque next global item
+    update while loop
+    update global item
+    update producer array
+
+    sleep for ptime
+
+    tell mutex to unlock
+    tell full semaphore to post
+
+  exit the thread when it is all done
+
+consumer(thread id)
+  while there are still items left to consume
+    tell full semaphore to wait
+    tell mutex to lock
+
+    dequeue next item
+    update while loop
+    update consumer array
+
+    sleep for ctime
+
+    tell mutex to unlock
+    tell empty semaphore to post
+
+  exit the thread when it is all done
+
+printbuffers()
+  print the contents of the producer and consumer buffers side by side
+
+//Queue operations
+enqueue(item)
+  if queue isnt full
+    add item to the end and increase its size
+
+dequeue()
+  if queue isn't empty
+    remove the first item
+    move the other items up by one
+    decrement the size
+    return the item
+
+getbeginning()
+  if queue isn't empty
+    returns the first item in the queue w/o decrement
+
+getend()
+  if the queue isn't empty
+    return the last item in the queue w/o decrement
+
+isfull()
+  checks if the size equals the totalsize
+
+isempty()
+  checks if size equals 0
