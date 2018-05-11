@@ -1,15 +1,15 @@
 # Project 5 – Producer Consumer Problem
-Name  : Keawa Rozet
-Date  : 4-20-2018
-Class : CSC415
+Name  : Keawa Rozet  
+Date  : 4-20-2018  
+Class : CSC415  
 
 # Compile Instruction:
-Use the Makefile to compile the project:
-make -f Makefile
+Use the Makefile to compile the project:  
+make -f Makefile  
 
 # Run Instruction:
-Then type the following command to execute the program:
-./pandc 7 5 3 15 1 1
+Then type the following command to execute the program:  
+./pandc 7 5 3 15 1 1  
 
 # Project Description:
 
